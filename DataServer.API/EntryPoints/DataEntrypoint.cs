@@ -60,13 +60,20 @@ public static class DataEntrypoint
         {
            return await context.Servers.ToListAsync<Server>();
         });
+        
         app.MapGet("/entries/{serverId}", async( int serverId, DataServerContext context) =>
         {
            return await context.Entries.Where(e => e.ServerId == serverId).AsNoTracking().ToListAsync();
         });
+
         app.MapGet("/runs/{entryId}", async( int entryId, DataServerContext context) =>
         {
            return await context.Runs.Where(e =>e.EntryId == entryId).AsNoTracking().ToListAsync();
+        });
+
+        app.MapGet("/run/{runId}", async( int runId, DataServerContext context) =>
+        {
+           return await context.Runs.FindAsync(runId);
         });
     }
 }
