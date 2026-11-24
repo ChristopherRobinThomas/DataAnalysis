@@ -1,5 +1,8 @@
-var builder = WebApplication.CreateBuilder(args);
+using DataServer.API.Data;
 
+var builder = WebApplication.CreateBuilder(args);
+var connString = "Data Source=DataServer.db";
+builder.Services.AddSqlite<DataServerContext>(connString);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
