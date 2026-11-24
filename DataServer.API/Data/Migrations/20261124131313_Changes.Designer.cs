@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataServer.API.Data.Migrations;
 
 [DbContext(typeof(DataServerContext))]
-[Migration("20261124112041_SeedInitialData")]
-partial class _20261124112041_SeedInitialData
+[Migration("20261124131313_Changes")]
+partial class _20261124131313_Changes
 {
     /// <inheritdoc />
     protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,6 +63,9 @@ partial class _20261124112041_SeedInitialData
                 b.Property<decimal?>("Os")
                     .HasColumnType("TEXT");
 
+                b.Property<decimal?>("Sleep")
+                    .HasColumnType("TEXT");
+
                 b.Property<decimal?>("St")
                     .HasColumnType("TEXT");
 
@@ -70,6 +73,10 @@ partial class _20261124112041_SeedInitialData
                     .HasColumnType("TEXT");
 
                 b.Property<decimal?>("System")
+                    .HasColumnType("TEXT");
+
+                b.Property<string>("name")
+                    .IsRequired()
                     .HasColumnType("TEXT");
 
                 b.Property<decimal?>("overall")
@@ -95,18 +102,6 @@ partial class _20261124112041_SeedInitialData
                 b.HasKey("Id");
 
                 b.ToTable("Servers");
-
-                b.HasData(
-                    new
-                    {
-                        Id = 1,
-                        Name = "oscip05"
-                    },
-                    new
-                    {
-                        Id = 2,
-                        Name = "oslab15"
-                    });
             });
 
         modelBuilder.Entity("DataServer.API.Models.User", b =>

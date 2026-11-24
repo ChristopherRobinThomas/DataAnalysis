@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataServer.API.Data.Migrations;
 
 [DbContext(typeof(DataServerContext))]
-[Migration("20261124111203_Init")]
-partial class _20261124111203_Init
+[Migration("20261124113526_Init")]
+partial class _20261124113526_Init
 {
     /// <inheritdoc />
     protected override void BuildTargetModel(ModelBuilder modelBuilder)

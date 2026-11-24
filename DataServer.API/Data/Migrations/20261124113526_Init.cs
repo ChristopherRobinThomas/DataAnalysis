@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DataServer.API.Data.Migrations;
 
 /// <inheritdoc />
-public partial class _20261124111203_Init : Migration
+public partial class _20261124113526_Init : Migration
 {
     /// <inheritdoc />
     protected override void Up(MigrationBuilder migrationBuilder)

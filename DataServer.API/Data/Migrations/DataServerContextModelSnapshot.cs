@@ -14,7 +14,7 @@ partial class DataServerContextModelSnapshot : ModelSnapshot
     // If you encounter a merge conflict in the line below, it means you need to
     // discard one of the migration branches and recreate its migrations on top of
     // the other branch. See https://aka.ms/efcore-docs-migrations-conflicts for more info.
-    public override string LastMigrationId => "20261124112041_SeedInitialData";
+    public override string LastMigrationId => "20261124131313_Changes";
 
     protected override void BuildModel(ModelBuilder modelBuilder)
     {
@@ -65,6 +65,9 @@ partial class DataServerContextModelSnapshot : ModelSnapshot
                 b.Property<decimal?>("Os")
                     .HasColumnType("TEXT");
 
+                b.Property<decimal?>("Sleep")
+                    .HasColumnType("TEXT");
+
                 b.Property<decimal?>("St")
                     .HasColumnType("TEXT");
 
@@ -72,6 +75,10 @@ partial class DataServerContextModelSnapshot : ModelSnapshot
                     .HasColumnType("TEXT");
 
                 b.Property<decimal?>("System")
+                    .HasColumnType("TEXT");
+
+                b.Property<string>("name")
+                    .IsRequired()
                     .HasColumnType("TEXT");
 
                 b.Property<decimal?>("overall")
@@ -97,18 +104,6 @@ partial class DataServerContextModelSnapshot : ModelSnapshot
                 b.HasKey("Id");
 
                 b.ToTable("Servers");
-
-                b.HasData(
-                    new
-                    {
-                        Id = 1,
-                        Name = "oscip05"
-                    },
-                    new
-                    {
-                        Id = 2,
-                        Name = "oslab15"
-                    });
             });
 
         modelBuilder.Entity("DataServer.API.Models.User", b =>
